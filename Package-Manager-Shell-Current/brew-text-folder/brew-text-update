@@ -1,0 +1,18 @@
+#!/bin/bash
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+read -p "Are you sure you want to update? y/n: " yn
+
+if [ $yn = y ]; then
+    brew update
+    brew upgrade
+elif [ $yn = n ]; then
+    ./brew-text-start
+else
+    echo -e Invalid input
+    ./brew-text-update
+fi
+
+./brew-text-start
+
+$SHELL

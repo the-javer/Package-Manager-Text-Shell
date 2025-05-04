@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e Brew Text Shell
+echo "1. Update and upgrade formula/casks 
+2. Install formula/cask
+3. Uninstall formula/cask
+4. Exit to home"
+
+read -p "Select one by typing the corresponding number: " input
+
+if [ $input = 1 ]; then
+    ./brew-text-update
+elif [ $input = 2 ]; then
+    ./brew-text-install
+elif [ $input = 3 ]; then
+    ./brew-text-uninstall
+elif [ $input = 4 ]; then
+    cd ..
+    ./manager-shell-home
+else
+    echo -e Invalid input
+    ./brew-text-start
+fi
+
+$SHELL

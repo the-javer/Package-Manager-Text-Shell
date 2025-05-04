@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "Are you sure you want to update? y/n: " yn
+
+if [ $yn = y ]; then
+    sudo apt update
+    sudo apt upgrade
+elif [ $yn = n ]; then
+    ./apt-text-start
+else
+    echo -e Invalid input
+    ./apt-text-update
+fi
+
+./apt-text-start
+
+$SHELL

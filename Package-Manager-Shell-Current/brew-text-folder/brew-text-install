@@ -1,0 +1,22 @@
+#!/bin/bash
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+read -p "Are you sure you want to install a package? y/n: " yn2
+
+if [ $yn2 = y ]; then
+    read -p "Type the package name for search: " search
+    brew search $search
+    echo "Here are other packages with that name or with a similar name in case of error.
+If you already know the name, retype it in the prompt."
+    read -p "Type the name of your chosen package for installation: " install
+    brew install $install
+elif [ $yn2 = n ]; then
+    ./brew-text-start
+else
+    echo -e Invalid input
+    ./brew-text-install
+fi
+
+./brew-text-start
+
+$SHELL

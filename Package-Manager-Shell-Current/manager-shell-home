@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo Package Manager Text Shell
+echo "1. Apt
+2. Homebrew
+3. Exit"
+
+read -p "Select your package manager or exit by typing the corresponding number: " choice
+
+if [ $choice = 1 ]; then
+    cd ~/Package-Manager-Shell-Current/apt-text-folder
+    ./apt-text-start
+elif [ $choice = 2 ]; then
+    cd ~/Package-Manager-Shell-Current/brew-text-folder
+    ./brew-text-start
+elif [ $choice = 3 ]; then
+    exit
+else
+    echo -e Invalid input
+    ./manager-shell-home
+fi
+
+$SHELL

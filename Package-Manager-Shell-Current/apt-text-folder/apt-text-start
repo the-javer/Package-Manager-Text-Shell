@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e Apt Text Shell
+echo "1. Update and upgrade packages 
+2. Install package 
+3. Purge package
+4. Exit to home"
+
+read -p "Select one by typing the corresponding number: " input
+
+if [ $input = 1 ]; then
+    ./apt-text-update
+elif [ $input = 2 ]; then
+    ./apt-text-install
+elif [ $input = 3 ]; then
+    ./apt-text-purge
+elif [ $input = 4 ]; then
+    cd ..
+    ./manager-shell-home
+else
+    echo -e Invalid input
+    ./apt-text-start
+fi
+
+$SHELL

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+SCRIPT_DIR="$(pwd)"
+./brew-text-start
+
+$SHELL
