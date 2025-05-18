@@ -1,14 +1,19 @@
 #!/bin/bash
 
-read -p "Are you sure you want to purge a package? y/n: " yn3
+echo "Apt Text Shell"
+read -p "Are you sure you want to purge a package? y/n: " yn
 
-if [ $yn3 = y ]; then
+if [ $yn = y ]; then
     read -p "Type the package you would like to purge: " purge
     sudo apt-get purge $purge
-elif [ $yn3 = n ]; then
+    ./apt-text-clear
+elif [ $yn = n ]; then
+    clear
     ./apt-text-start
 else
-    echo -e Invalid input
+    clear
+    echo "Invalid input
+"
     ./apt-text-purge
 fi
 

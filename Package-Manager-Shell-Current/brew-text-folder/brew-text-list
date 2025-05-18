@@ -1,0 +1,8 @@
+#!/bin/bash
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+brew list --version | nl | less
+
+./brew-text-start
+
+$SHELL
