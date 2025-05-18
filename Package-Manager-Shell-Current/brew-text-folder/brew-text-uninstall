@@ -1,0 +1,23 @@
+#!/bin/bash
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+echo "Brew Text Shell"
+read -p "Are you sure you want to uninstall a package? y/n: " yn3
+
+if [ $yn3 = y ]; then
+    read -p "Type the package you would like to uninstall: " uninstall
+    brew uninstall $uninstall
+    ./brew-text-clear
+elif [ $yn3 = n ]; then
+    clear
+    ./brew-text-start
+else
+    clear
+    echo "Invalid input
+"
+    ./brew-text-purge
+fi
+
+./brew-text-start
+
+$SHELL
