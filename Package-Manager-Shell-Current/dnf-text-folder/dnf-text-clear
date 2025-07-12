@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "Would you like to clear output? y/n: " yn
+
+if [ $yn = y ]; then
+    clear
+    ./dnf-text-start
+elif [ $yn = n ]; then
+    ./dnf-text-start
+else
+    echo "Invalid input
+"
+    ./dnf-text-clear
+fi
+
+$SHELL
