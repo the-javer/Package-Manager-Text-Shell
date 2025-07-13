@@ -1,0 +1,7 @@
+#!/bin/bash
+
+yum list --version | nl | less
+
+./yum-text-start
+
+$SHELL

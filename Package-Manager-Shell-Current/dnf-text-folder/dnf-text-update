@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "DNF Text Shell"
+read -p "Are you sure you want to update? y/n: " yn
+
+if [ $yn = y ]; then
+    dnf check-upgrade
+    sudo dnf upgrade -y
+    sudo dnf autoremove -y
+    ./dnf-text-clear
+elif [ $yn = n ]; then
+    clear
+    ./dnf-text-start
+else
+    clear
+    echo "Invalid input
+"
+    ./dnf-text-update
+fi
+
+./dnf-text-start
+
+$SHELL

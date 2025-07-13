@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "YUM Text Shell"
+read -p "Are you sure you want to update? y/n: " yn
+
+if [ $yn = y ]; then
+    yum check-upgrade
+    sudo yum upgrade -y
+    sudo yum autoremove -y
+    ./yum-text-clear
+elif [ $yn = n ]; then
+    clear
+    ./yum-text-start
+else
+    clear
+    echo "Invalid input
+"
+    ./yum-text-update
+fi
+
+./yum-text-start
+
+$SHELL
