@@ -1,7 +1,0 @@
-#!/bin/bash
-
-dnf list --version | nl | less
-
-./dnf-text-start
-
-$SHELL

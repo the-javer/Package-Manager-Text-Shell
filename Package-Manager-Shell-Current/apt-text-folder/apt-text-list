@@ -1,7 +1,0 @@
-#!/bin/bash
-
-apt list --installed | nl | less
-
-./apt-text-start
-
-$SHELL
